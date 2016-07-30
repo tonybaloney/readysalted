@@ -69,7 +69,7 @@ The idea for this implementation is
 
 ### Pros
 
-- This would be really cool
+- This would be really cool, much hackernews points.
 
 ### Cons
 
@@ -79,6 +79,32 @@ The idea for this implementation is
 
 ## Option 3 - Run a ZeroMQ client on the device
 
+Instead of writing all these crazy proxies, I write a "microminion" in C which talks to the master's ZeroMQ server natively. Therefore
+it can send and receive events directly from the Salt bus.
+
+### Pros
+
+- Would be really flexible and high-performance
+
+### Cons
+
+- Not sure if ZeroMQ is designed for devices (i.e. terrible connections)
+- No idea how the Salt implementation of ZMQ works
+- Security? 
+
 ## Option 4 - Write a MQTT transport module for SaltStack
+
+I've seen the RAET transport module for Salt, so perhaps one could be written for MQTT, instead of sending and receiving events to Mosquitto,
+they get sent directly to the salt master.
+
+### Pros
+
+- Performance would be better than via mosquitto
+- Salt could now be used for crappy-connection minions
+
+### Cons
+
+- This makes sense in my head, but I need to check with the salt team
+- Probably quite a bit of work to implement
 
 ## Option 5 - ??
