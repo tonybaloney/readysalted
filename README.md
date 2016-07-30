@@ -34,7 +34,7 @@ I'm ruling the Raspberry Pi out, they're too expensive and bloated for tiny sens
 
 I have come up with a few options to achieve this
 
-## Option 1 - MQTT using an execution module, a proxy minion and a state module
+## Option 1 - MQTT using an execution module, and a state module
 
 This idea is to implement [MQTT](https://en.wikipedia.org/wiki/MQTT) as the transport mechanism and then each piece of hardware has custom firmware to respond to particular events.
 
@@ -107,4 +107,15 @@ they get sent directly to the salt master.
 - This makes sense in my head, but I need to check with the salt team
 - Probably quite a bit of work to implement
 
-## Option 5 - ??
+## Option 5 - Firmata over Ethernet (or MQTT)
+
+This is how [Microblu](https://github.com/octoblu/microblu_mqtt) works
+
+### Pros
+
+- Hugely flexible, just flash the firmware and go!
+- Already done, just build a Python wrapper (combine with option 1)
+
+### Cons
+
+- Doesn't seem to be maintained anymore
