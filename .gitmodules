@@ -1,0 +1,4 @@
+[submodule "beta"]
+	path = mqtt/salt
+	url = git@github.com:tonybaloney/salt
+	branch = mqtt
