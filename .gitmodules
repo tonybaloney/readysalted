@@ -1,3 +1,0 @@
-[submodule "mqtt/-b"]
-	path = mqtt/-b
-	url = git@github.com:tonybaloney/salt
